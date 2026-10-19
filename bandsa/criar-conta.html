@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eclipse - A revolução do rock moderno. Ouça nossos sucessos, compre ingressos para os shows e conheça nossa história.">
+    <meta name="keywords" content="Eclipse banda, rock alternativo, música portuguesa, tour 2023, álbum Eclipse">
+    <title>Eclipse | Página Oficial</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+
+   
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-dark py-3 sticky-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="imagens/Logotipo para banda.png" alt="Eclipse Logo" class="img-fluid" width="80">
+                </div>
+                <div class="col-md-8">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="albuns.html">Álbuns</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="tour.html">Tour</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
+                                </ul>
+                                <div class="d-flex ms-3">
+                                    <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                        <i class="fas fa-user me-2"></i>Entrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card card-eclipse shadow-lg overflow-hidden">
+            <div class="card-header bg-danger text-white d-flex align-items-center">
+              <i class="fas fa-user-plus me-2"></i>
+              <h5 class="mb-0">Criar Conta</h5>
+            </div>
+
+            <div class="card-body">
+              <div id="alertBox" class="alert d-none" role="alert"></div>
+
+              <form id="registerForm" novalidate>
+                <div class="mb-3">
+                  <label class="form-label">Nome de Utilizador</label>
+                  <input name="username" id="username" class="form-control dark" required>
+                  <div class="invalid-feedback">Nome de utilizador obrigatório.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input name="email" id="email" type="email" class="form-control dark" required>
+                  <div class="invalid-feedback">Email inválido.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Senha</label>
+                  <div class="input-group">
+                    <input id="password" name="password" type="password" class="form-control dark" required minlength="8">
+                    <button type="button" class="btn btn-outline-secondary" id="togglePwd" title="Mostrar/Ocultar">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
+                  <div class="form-text text-muted">Mínimo 8 caracteres.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Confirmar Senha</label>
+                  <input id="password_confirm" name="password_confirm" type="password" class="form-control dark" required>
+                  <div class="invalid-feedback">As senhas têm de coincidir.</div>
+                </div>
+
+                <div class="d-grid">
+                  <button id="submitBtn" class="btn btn-eclipse" type="submit">
+                    <i class="fas fa-user-plus me-2"></i> Criar Conta
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card-footer bg-dark text-center">
+              <small class="text-white-50">Já tem conta? <a href="criar-conta.html" class="text-white">Entrar</a></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // UI helpers
+    const alertBox = document.getElementById('alertBox');
+    function showAlert(message, type = 'danger') {
+      alertBox.className = 'alert alert-' + type;
+      alertBox.textContent = message;
+      alertBox.classList.remove('d-none');
+    }
+
+    // Password toggle
+    document.getElementById('togglePwd')?.addEventListener('click', function () {
+      const pwd = document.getElementById('password');
+      const icon = this.querySelector('i');
+      if (pwd.type === 'password') { pwd.type = 'text'; icon.classList.replace('fa-eye','fa-eye-slash'); }
+      else { pwd.type = 'password'; icon.classList.replace('fa-eye-slash','fa-eye'); }
+    });
+
+    // Submit via fetch to php/register.php
+    document.getElementById('registerForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      alertBox.classList.add('d-none');
+
+      // Simple client-side validation
+      const form = e.target;
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+      const pwd = document.getElementById('password').value;
+      const pwdc = document.getElementById('password_confirm').value;
+      if (pwd.length < 8) { showAlert('Senha deve ter pelo menos 8 caracteres.'); return; }
+      if (pwd !== pwdc) { showAlert('As senhas não coincidem.'); return; }
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Carregando...';
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch('php/register.php', { method: 'POST', body: data });
+        const json = await res.json();
+        if (json.success) {
+          showAlert('Conta criada com sucesso. A redirecionar...', 'success');
+          setTimeout(()=> window.location.href = 'login.php', 1400);
+        } else {
+          showAlert(json.message || 'Erro ao criar conta.');
+        }
+      } catch (err) {
+        showAlert('Erro de comunicação com o servidor.');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-user-plus me-2"></i> Criar Conta';
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

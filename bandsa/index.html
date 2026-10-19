@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eclipse - A revolução do rock moderno. Ouça nossos sucessos, compre ingressos para os shows e conheça nossa história.">
+    <meta name="keywords" content="Eclipse banda, rock alternativo, música portuguesa, tour 2023, álbum Eclipse">
+    <title>Eclipse | Página Oficial</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+
+   
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-dark py-3 sticky-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="imagens/Logotipo para banda.png" alt="Eclipse Logo" class="img-fluid" width="80">
+                </div>
+                <div class="col-md-8">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="albuns.html">Álbuns</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="tour.html">Tour</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contactos.html">Contactos</a></li>
+                                </ul>
+                                <div class="d-flex ms-3">
+  <button type="button" class="btn btn-outline-light" onclick="window.location.href='php/login.php'">
+    <i class="fas fa-user me-2"></i>Entrar
+  </button>
+</div>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Hero -->
+    <section class="banner-hero text-white d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">ECLIPSE</h1>
+            <p class="lead fs-4 mb-5">O som que vai dominar a sua playlist</p>
+            <a href="tour.html" class="btn btn-danger btn-lg pulse-effect me-3">Ver Tour</a>
+            <a href="albuns.html" class="btn btn-outline-light btn-lg">Ouça Agora</a>
+            
+  
+        </div>
+    </section>
+
+    <!-- Último Lançamento -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-compact-disc me-2"></i>Último Lançamento</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <img src="imagens/2.png" alt="Álbum Eclipse Vol.2" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h3>Eclipse Vol. 2</h3>
+                    <p class="text-muted">Lançado em 15 de Junho de 2023</p>
+                    <p>O aguardado segundo álbum da Eclipse traz 12 faixas inéditas que misturam rock progressivo com elementos eletrônicos. Destaque para os singles "Black Horizon" e "Phoenix Rise".</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light me-3"><i class="fab fa-spotify"></i> Spotify</a>
+                        <a href="#" class="btn btn-outline-light"><i class="fab fa-apple"></i> Apple Music</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Shows -->
+    <section class="py-5 bg-black">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-calendar-alt me-2"></i>Próximo Show</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card show-card h-100">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">Lisboa</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Coliseu dos Recreios</p>
+                            <p><i class="fas fa-clock me-2"></i>15 Out 2025 - 21:30</p>
+                        </div>
+                        <div class="card-footer bg-dark">
+                            <a href="tour.html" class="btn btn-danger w-100">Comprar Ingresso</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repetir para outros shows -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="tour.html" class="btn btn-outline-light">Ver Todas as Datas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vídeo Clipe -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fas fa-video me-2"></i>Último Clipe</h2>
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/watch?v=pQzTBdeUNlU" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 bg-danger text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="mb-4">Junte-se à Eclipse</h2>
+                    <p class="mb-4">Receba novidades exclusivas, pré-vendas de ingressos e conteúdos especiais.</p>
+                    <form class="row g-2 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Seu melhor email">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-dark btn-lg w-100">Assinar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="imagens/Logotipo para banda.png" alt="Eclipse Logo" class="img-fluid" width="90">
+                    <p class="mt-3">A nova força do rock português.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Início</a></li>
+                        <li><a href="sobre.html" class="text-white">Sobre</a></li>
+                        <li><a href="albuns.html" class="text-white">Álbuns</a></li>
+                        <li><a href="tour.html" class="text-white">Tour</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Redes Sociais</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-spotify fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <p><i class="fas fa-envelope me-2"></i>contacto@eclipse.com</p>
+                    </div>
+                </div>
+            </div>
+             <hr class="my-5 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Eclipse. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Desenvolvido com <i class="fas fa-heart text-danger"></i> por <a href="#" class="text-white">RockTech</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-danger">
+                <div class="modal-header border-danger">
+                    <h5 class="modal-title" id="loginModalLabel">
+                        <i class="fas fa-user-circle me-2"></i>Entrar na Conta
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="php/login.php" method="POST" id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">
+                                <i class="fas fa-user me-2"></i>Nome de Utilizador ou Email
+                            </label>
+                            <input type="text" name="username" class="form-control bg-black text-white border-secondary" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                <i class="fas fa-lock me-2"></i>Senha
+                            </label>
+                            <input type="password" name="password" class="form-control bg-black text-white border-secondary" id="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label" for="remember">
+                                Lembrar-me
+                            </label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-sign-in-alt me-2"></i>Entrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-danger">
+                    <p class="mb-0">Não tem conta? <a href="criar-conta.html" class="text-danger">Criar Conta</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Bootstrap JS -->
+
+</body>
+</html>

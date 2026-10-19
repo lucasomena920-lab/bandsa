@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin • Eclipse</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/admin-ui.css">
+</head>
+<body class="bg-dark text-white">
+  <div class="admin-shell d-flex">
+    <aside class="admin-sidebar bg-black">
+      <div class="brand p-3 d-flex align-items-center">
+        <img src="../imagens/Logotipo para banda.png" alt="Eclipse" height="36" class="me-2">
+        <strong>Eclipse</strong>
+      </div>
+      <nav class="nav flex-column p-2">
+        <a href="dashboard.html" class="nav-link active"><i class="fa fa-tachometer-alt me-2"></i> Dashboard</a>
+        <a href="users.html" class="nav-link"><i class="fa fa-users me-2"></i> Utilizadores</a>
+        <a href="musics.html" class="nav-link"><i class="fa fa-music me-2"></i> Músicas</a>
+        <a href="artists.html" class="nav-link"><i class="fa fa-microphone me-2"></i> Artistas</a>
+        <a href="playlists.html" class="nav-link"><i class="fa fa-list me-2"></i> Playlists</a>
+        <a href="products.html" class="nav-link"><i class="fa fa-box-open me-2"></i> Loja</a>
+        <a href="orders.html" class="nav-link"><i class="fa fa-shopping-cart me-2"></i> Encomendas</a>
+        <a href="banners.html" class="nav-link"><i class="fa fa-image me-2"></i> Banners</a>
+        <a href="comments.html" class="nav-link"><i class="fa fa-comments me-2"></i> Comentários</a>
+        <a href="pages.html" class="nav-link"><i class="fa fa-file-alt me-2"></i> Páginas</a>
+        <a href="settings.html" class="nav-link mt-3 text-danger"><i class="fa fa-sign-out-alt me-2"></i> Sair</a>
+      </nav>
+      <div class="sidebar-footer small text-muted p-3">Painel seguro • Mantém as cores do site</div>
+    </aside>
+
+    <main class="admin-main flex-fill">
+      <header class="admin-topbar d-flex justify-content-between align-items-center px-4 py-2 border-bottom">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-outline-light d-lg-none" id="toggleSidebar"><i class="fa fa-bars"></i></button>
+          <h4 class="mb-0">Painel Administrativo</h4>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="me-3 text-muted small">Bem vindo(a), <strong>admin</strong></div>
+          <div class="dropdown">
+            <button class="btn btn-sm btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">Conta</button>
+            <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="#">Perfil</a></li><li><a class="dropdown-item text-danger" href="../php/admin_logout.php">Sair</a></li></ul>
+          </div>
+        </div>
+      </header>
+
+      <section class="admin-content p-4" id="appContent">
+        <!-- Conteúdo injectado nas páginas específicas (ver dashboard.html, users.html, etc.) -->
+        <div class="placeholder text-center text-muted py-5">Escolha uma secção no menu</div>
+      </section>
+    </main>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- Formulário que envia para o PHP -->
+<form method="POST" action="checkout.php" id="checkoutForm">
+    <!-- Dados do carrinho (podes gerar com JavaScript) -->
+    <input type="hidden" name="cart_total" id="cartTotal" value="70.00">
+    <input type="hidden" name="cart_items" id="cartItems" value='[{"name":"CD","price":15,"qty":2},{"name":"T-Shirt","price":25,"qty":1}]'>
+</form>
+
+<!-- Botão que envia o formulário -->
+<button type="button" onclick="submitCheckout()" class="btn btn-success btn-lg">
+    🛒 Finalizar Compra - €70.00
+</button>
+
+<script>
+function submitCheckout() {
+    // Pega os dados do carrinho (podes ajustar isso)
+    const total = 70.00; // Calcula isto dinamicamente
+    const items = [
+        {name: "CD Álbum Exclusivo", price: 15.00, qty: 2},
+        {name: "T-Shirt Oficial", price: 25.00, qty: 1}
+    ];
+    
+    // Preenche os campos escondidos
+    document.getElementById('cartTotal').value = total;
+    document.getElementById('cartItems').value = JSON.stringify(items);
+    
+    // Envia o formulário
+    document.getElementById('checkoutForm').submit();
+}
+</script>
